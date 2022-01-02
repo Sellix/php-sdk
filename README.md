@@ -30,7 +30,7 @@ $client = new Sellix("<YOUR_API_KEY>");
 
 try {
     $products = $client->get_products();
-} catch (SellixException as $e) {
+} catch (SellixException $e) {
     echo $e->__toString();
 }
 
