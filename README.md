@@ -23,9 +23,12 @@ composer require sellix/php-sdk
 
 ```php
 <?php
+
 require_once 'vendor/autoload.php';
 
 use \Sellix\PhpSdk\Sellix;
+use \Sellix\PhpSdk\SellixException;
+
 $client = new Sellix("<YOUR_API_KEY>");
 
 try {
