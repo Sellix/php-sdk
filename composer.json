@@ -1,0 +1,19 @@
+{
+    "name": "sellix/php-sdk",
+    "description": "Sellix PHP SDK",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sellix\\PhpSdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Daniele Servadei",
+            "email": "daniele@sellix.io"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
