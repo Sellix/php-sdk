@@ -1,5 +1,7 @@
 <?php
 
+namespace Sellix\PhpSdk;
+
 trait Queries {
   public function get_queries() {
     $response = $this->request("/queries");

@@ -1,5 +1,7 @@
 <?php
 
+namespace Sellix\PhpSdk;
+
 trait Orders {
   public function get_orders() {
     $response = $this->request("/orders");

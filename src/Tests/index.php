@@ -1,5 +1,7 @@
 <?php
 
+namespace Sellix\PhpSdk;
+
 function sellix_test_sdk($sellix, $components = []) {
   try {
     if (!count($components) || in_array("blacklists", $components)) {

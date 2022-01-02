@@ -1,5 +1,7 @@
 <?php
 
+namespace Sellix\PhpSdk;
+
 trait Whitelists {
   public function get_whitelists() {
     $response = $this->request("/whitelists");

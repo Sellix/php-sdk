@@ -1,5 +1,7 @@
 <?php
 
+namespace Sellix\PhpSdk;
+
 trait Feedback {
   public function get_feedback($uniqid = NULL) {
     if ($uniqid) {

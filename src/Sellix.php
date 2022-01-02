@@ -1,5 +1,7 @@
 <?php
 
+namespace Sellix\PhpSdk;
+
 define("BASE_DIR", dirname(__FILE__));
 
 require_once BASE_DIR."/Blacklists/index.php";
@@ -13,8 +15,6 @@ require_once BASE_DIR."/Queries/index.php";
 require_once BASE_DIR."/Payments/index.php";
 require_once BASE_DIR."/Exceptions/index.php";;
 require_once BASE_DIR."/Tests/index.php";
-
-namespace Sellix\PhpSdk;
 
 class Sellix {
   protected string $api_key;

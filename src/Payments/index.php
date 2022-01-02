@@ -1,5 +1,7 @@
 <?php
 
+namespace Sellix\PhpSdk;
+
 trait Payments {
   public function create_payment($payload) {
     $response = $this->request("/payments", "POST", $payload);

@@ -1,5 +1,7 @@
 <?php
 
+namespace Sellix\PhpSdk;
+
 trait Categories {
   public function get_categories() {
     $response = $this->request("/categories");

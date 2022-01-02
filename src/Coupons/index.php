@@ -1,5 +1,7 @@
 <?php
 
+namespace Sellix\PhpSdk;
+
 trait Coupons {
   public function get_coupons() {
     $response = $this->request("/coupons");

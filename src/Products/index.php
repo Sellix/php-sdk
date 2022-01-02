@@ -1,5 +1,7 @@
 <?php
 
+namespace Sellix\PhpSdk;
+
 trait Products {
   public function get_products() {
     $response = $this->request("/products");

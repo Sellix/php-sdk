@@ -1,5 +1,7 @@
 <?php
 
+namespace Sellix\PhpSdk;
+
 trait Blacklists {
   public function get_blacklists() {
     $response = $this->request("/blacklists");
