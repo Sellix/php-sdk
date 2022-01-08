@@ -31,8 +31,9 @@ class Sellix {
 
   static $API_ENDPOINT = 'https://dev.sellix.io/v1';
 
-  public function __construct(string $api_key) {
+  public function __construct(string $api_key, string $merchant = NULL) {
     $this->api_key = $api_key;
+    $this->merchant = $merchant;
   }
 
   private function handle_response($response, $key = NULL) {
@@ -44,9 +45,8 @@ class Sellix {
       }
 
       if (is_array($key) && array_key_exists("oneOf", $key)) {
-        $updated_response = new stdClass();
+        $updated_response = new \stdClass();
         foreach ($key["oneOf"] as $option) {
-          $keys = NULL;
           if (strpos($option, ",") !== false) {
             foreach (explode(",", $option) as $key_option) {
               if (property_exists($response->data, $key_option)) {
@@ -68,14 +68,20 @@ class Sellix {
   private function request($component, $action = "GET", $payload = NULL) {
     $curl = curl_init();
     
+    $headers = [
+      "Content-type: application/json",
+      "Authorization: Bearer " . $this->api_key
+    ];
+
+    if ($this->merchant) {
+      $headers[] = "X-Sellix-Merchant: ".$this->merchant;
+    }
+
     $curl_array = [
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_CUSTOMREQUEST => $action,
       CURLOPT_URL => self::$API_ENDPOINT.$component,
-      CURLOPT_HTTPHEADER => [
-        "Content-type: application/json",
-        "Authorization: Bearer ".$this->api_key
-      ]
+      CURLOPT_HTTPHEADER => $headers
     ];
 
     if ($payload) {

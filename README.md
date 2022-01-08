@@ -29,7 +29,9 @@ require_once 'vendor/autoload.php';
 use \Sellix\PhpSdk\Sellix;
 use \Sellix\PhpSdk\SellixException;
 
-$client = new Sellix("<YOUR_API_KEY>");
+// pass <MERCHANT_NAME> only if you need to be authenticated as an additional store
+
+$client = new Sellix("<YOUR_API_KEY>", "<MERCHANT_NAME>");
 
 try {
     $products = $client->get_products();
