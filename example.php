@@ -1,6 +1,6 @@
 <?php
 
-require_once "index.php";
+require_once "src/Sellix.php";
 
 $sellix = new Sellix("<SELLIX_API_KEY>");
 sellix_test_sdk($sellix, [
