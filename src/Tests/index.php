@@ -1,7 +1,5 @@
 <?php
 
-namespace Sellix\PhpSdk;
-
 function sellix_test_sdk($sellix, $components = []) {
   try {
     if (!count($components) || in_array("blacklists", $components)) {
@@ -174,6 +172,48 @@ function sellix_test_sdk($sellix, $components = []) {
       echo "  Delete payment no white label passed ✓\n";
       $sellix->delete_payment($payment_white_label->uniqid);
       echo "  Delete payment white label passed ✓\n";
+    }
+
+    if (!count($components) || in_array("customers", $components)) {
+      echo "Testing customers\n";
+      $customer_payload = [
+        "email" => "sample@gmail.com",
+        "name" => "James",
+        "surname" => "Smith",
+        "phone" => "3287261000",
+        "phone_country_code" => "IT",
+        "country_code" => "IT",
+        "street_address" => "St. Rome 404",
+        "additional_address_info" => null,
+        "city" => "Rome",
+        "postal_code" => "0",
+        "state" => "Italy"
+      ];
+      $customer_id = $sellix->create_customer($customer_payload);
+      echo "  Create customer passed ✓\n";
+      $sellix->get_customer($customer_id);
+      echo "  Get customer passed ✓\n";
+      $sellix->get_customers();
+      echo "  Get customers passed ✓\n";
+      $sellix->update_customer($customer_id, $customer_payload);
+      echo "  Update customer passed ✓\n";
+    }
+
+    if (!count($components) || in_array("subscriptions", $components)) {
+      echo "Testing subscriptions\n";
+      $subscription_payload = [
+        "product_id" => "61a8de6277597",
+        "coupon_code" => null,
+        "custom_fields" => [
+          "user_id" => "demo"
+        ],
+        "customer_id" => "cst_4a30a219a9d7663fdd35",
+        "gateway" => null
+      ];
+      $sellix->create_subscription($subscription_payload);
+      echo "  Create subscription passed ✓\n";;
+      $sellix->get_subscriptions();
+      echo "  Get subscriptions passed ✓\n";
     }
   } catch (SellixException $e) {
     echo $e->__toString();

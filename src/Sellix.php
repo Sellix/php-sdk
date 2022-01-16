@@ -13,6 +13,8 @@ require_once BASE_DIR."/Orders/index.php";
 require_once BASE_DIR."/Products/index.php";
 require_once BASE_DIR."/Queries/index.php";
 require_once BASE_DIR."/Payments/index.php";
+require_once BASE_DIR."/Customers/index.php";
+require_once BASE_DIR."/Subscriptions/index.php";
 require_once BASE_DIR."/Exceptions/index.php";;
 require_once BASE_DIR."/Tests/index.php";
 
@@ -28,6 +30,8 @@ class Sellix {
   use Products;
   use Queries;
   use Payments;
+  use Customers;
+  use Subscriptions;
 
   static $API_ENDPOINT = 'https://dev.sellix.io/v1';
 
