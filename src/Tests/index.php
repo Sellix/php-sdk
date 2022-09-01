@@ -172,6 +172,8 @@ function sellix_test_sdk($sellix, $components = []) {
       echo "  Delete payment no white label passed ✓\n";
       $sellix->delete_payment($payment_white_label->uniqid);
       echo "  Delete payment white label passed ✓\n";
+      $sellix->complete_payment($payment_white_label->uniqid);
+      echo "  Complete payment white label passed ✓\n";
     }
 
     if (!count($components) || in_array("customers", $components)) {
