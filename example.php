@@ -10,6 +10,7 @@ sellix_test_sdk($sellix, [
   "blacklists",
   "whitelists",
   "categories",
+  "groups",
   "coupons",
   "feedback",
   "orders",
