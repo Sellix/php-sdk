@@ -60,6 +60,26 @@ function sellix_test_sdk($sellix, $components = []) {
       echo "  Delete category passed ✓\n";
     }
 
+    if (!count($components) || in_array("groups", $components)) {
+      echo "Testing groups\n";
+      $group_payload = [
+        "title" => "Software",
+        "unlisted" => false,
+        "products_bound" => [],
+        "sort_priority" => 0
+      ];
+      $group_uniqid = $sellix->create_group($group_payload);
+      echo "  Create group passed ✓\n";
+      $sellix->get_group($group_uniqid);
+      echo "  Get group passed ✓\n";
+      $sellix->get_groups();
+      echo "  Get groups passed ✓\n";
+      $sellix->update_group($group_uniqid, $group_payload);
+      echo "  Update group passed ✓\n";
+      $sellix->delete_group($group_uniqid);
+      echo "  Delete group passed ✓\n";
+    }
+
     if (!count($components) || in_array("coupons", $components)) {
       echo "Testing coupons\n";
       $coupon_payload = [
