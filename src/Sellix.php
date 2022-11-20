@@ -24,6 +24,7 @@ class Sellix {
   use Blacklists;
   use Whitelists;
   use Categories;
+  use Groups;
   use Coupons;
   use Feedback;
   use Orders;
