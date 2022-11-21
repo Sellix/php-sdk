@@ -125,6 +125,16 @@ function sellix_test_sdk($sellix, $components = []) {
       if ($orders[0]) {
         $sellix->get_order($orders[0]->uniqid);
         echo "  Get order passed ✓\n";
+        $sellix->update_order($orders[0]->uniqid, [
+          "gateway" => "STRIPE",
+          "stripe_apm" => "ideal"
+        ]);
+        echo "  Update order passed ✓\n";
+        $sellix->issue_order_replacement($orders[0]->uniqid, [
+          "quantity" => 1,
+          "product_id" => "demo"
+        ]);
+        echo "  Issue order replacement passed ✓\n";
       }
     }
 
