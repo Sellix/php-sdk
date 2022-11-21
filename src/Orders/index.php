@@ -20,7 +20,7 @@ trait Orders {
 
   public function issue_order_replacement($uniqid, $payload) {
     $response = $this->request("/orders/replacement/$uniqid", "POST", $payload);
-    return self::handle_response($response, "order");
+    return self::handle_response($response);
   }
 }
 
