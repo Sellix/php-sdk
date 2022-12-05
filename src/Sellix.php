@@ -10,6 +10,7 @@ require_once BASE_DIR."/Categories/index.php";
 require_once BASE_DIR."/Coupons/index.php";
 require_once BASE_DIR."/Feedback/index.php";
 require_once BASE_DIR."/Orders/index.php";
+require_once BASE_DIR."/Groups/index.php";
 require_once BASE_DIR."/Products/index.php";
 require_once BASE_DIR."/Queries/index.php";
 require_once BASE_DIR."/Payments/index.php";
