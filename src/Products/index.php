@@ -27,6 +27,11 @@ trait Products {
     $response = $this->request("/products/$uniqid", "DELETE");
     return self::handle_response($response);
   }
+
+  public function licensing_check($payload) {
+    $response = $this->request("/products/licensing/check", "POST", $payload);
+    return self::handle_response($response);
+  }
 }
 
 ?>
