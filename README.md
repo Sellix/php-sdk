@@ -1,6 +1,8 @@
 # Sellix PHP SDK 
 
 ![tag](https://img.shields.io/github/v/tag/sellix/php-sdk?sort=date&color=blueviolet)
+![version](https://img.shields.io/packagist/v/sellix/php-sdk)
+![downloads](https://img.shields.io/packagist/dt/sellix/php-sdk)
 
 ## Introduction
 
