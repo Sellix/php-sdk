@@ -32,6 +32,11 @@ trait Products {
     $response = $this->request("/products/licensing/check", "POST", $payload);
     return self::handle_response($response);
   }
+
+  public function licensing_update_hardware_id($payload) {
+    $response = $this->request("/products/licensing/hardware_id", "PUT", $payload);
+    return self::handle_response($response);
+  }
 }
 
 ?>

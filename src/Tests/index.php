@@ -161,6 +161,11 @@ function sellix_test_sdk($sellix, $components = []) {
       echo "  Update product passed ✓\n";
       $sellix->delete_product($product_uniqid);
       echo "  Delete product passed ✓\n";
+      $sellix->licensing_update_hardware_id([
+        "key" => "activation-key-#1",
+        "product_id" => "demo",
+        "hardware_id" => "example-id"
+      ]);
       $sellix->licensing_check([
         "key" => "activation-key-#1",
         "product_id" => "demo",
