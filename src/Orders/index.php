@@ -22,6 +22,11 @@ trait Orders {
     $response = $this->request("/orders/replacement/$uniqid", "POST", $payload);
     return self::handle_response($response);
   }
+
+  public function update_custom_fields($uniqid, $payload) {
+    $response = $this->request("/orders/$uniqid/custom_fields", "PUT", $payload);
+    return self::handle_response($response);
+  }
 }
 
 ?>

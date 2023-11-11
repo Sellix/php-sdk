@@ -135,6 +135,12 @@ function sellix_test_sdk($sellix, $components = []) {
           "product_id" => "demo"
         ]);
         echo "  Issue order replacement passed ✓\n";
+        $sellix->update_custom_fields($orders[0]->uniqid, [
+          "custom_fields" => [
+            "user_id" => "demo"
+          ]
+        ]);
+        echo "  Issue order replacement passed ✓\n";
       }
     }
 
